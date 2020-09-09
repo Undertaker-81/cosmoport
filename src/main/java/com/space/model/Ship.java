@@ -15,13 +15,12 @@ public class Ship {
     private ShipType shipType;
     @Temporal(TemporalType.DATE)
     private Date prodDate;
-    private Boolean isUsed = false;
+    private Boolean isUsed;
     private Double speed;
     private Integer crewSize;
     private Double rating;
 
-    public Ship() {
-    }
+
 
     public Long getId() {
         return id;
