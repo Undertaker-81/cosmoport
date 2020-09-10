@@ -19,10 +19,9 @@ public class ShipsService {
 
     public Page<Ship>  findAll(Integer pageNumber, Integer pageSize, ShipOrder order){
         Pageable pageable = PageRequest.of(pageNumber, pageSize, Sort.by(order.getFieldName()));
-        Page<Ship> listPage = repository.findAll(pageable);
 
 
-        return listPage;
+        return repository.findAll(pageable);
     }
     public List<Ship> findAll(){
         return repository.findAll();
