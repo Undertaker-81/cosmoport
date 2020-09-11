@@ -216,7 +216,7 @@ public class ShipsService {
         return new Specification<Ship>() {
             @Override
             public Predicate toPredicate(Root<Ship> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return criteriaBuilder.between(root.get("prodDate"),beforeDate, afterDate);
+                return criteriaBuilder.between(root.get("prodDate"),afterDate, beforeDate);
             }
         };
     }
@@ -266,7 +266,7 @@ public class ShipsService {
         return new Specification<Ship>() {
             @Override
             public Predicate toPredicate(Root<Ship> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
-                return criteriaBuilder.between(root.get("prodDate"),min, max);
+                return criteriaBuilder.between(root.get("speed"),min, max);
             }
         };
     }
