@@ -35,6 +35,9 @@ public class ShipsService {
 
         return repository.findAll(specification, pageable);
     }
+    public List<Ship>  findAll(Specification<Ship> specification) {
+        return repository.findAll(specification);
+    }
     public List<Ship> findAll(){
         return repository.findAll();
     }
@@ -130,7 +133,7 @@ public class ShipsService {
         }
     }
 
-    public Long checkAndParseId(String id) {
+    public Long checkId(String id) {
         if (id == null || id.equals("") || id.equals("0"))
             throw new BadRequestException();
 
